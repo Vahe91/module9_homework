@@ -9,8 +9,8 @@ btn.addEventListener('click', () => {
         cardDiv.textContent = 'одно из чисел вне диапазона от 100 до 300';
     } else {
         fetch(`https://picsum.photos/${width}/${height}`)
-            .then(data => {
-                return cardDiv.innerHTML = `<img src="${data.url}" alt="image with - ${width}, height - ${height}">`;
+            .then(response => {
+                cardDiv.innerHTML = `<img src="${response.url}" alt="image with - ${width}, height - ${height}">`;
             })
             .catch (reject => {console.log(reject)})
     }
